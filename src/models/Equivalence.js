@@ -1,10 +1,6 @@
 const mongoose = require('mongoose')
 
 const EquivalenceSchema = new mongoose.Schema({
-  id: {
-    type: Number,
-    required: true
-  },
   word_key: {
     type: String,
     required: true
