@@ -97,7 +97,7 @@ module.exports = {
 
       let wordKey = columns.indexOf('Equivalence')
       let word = columns.indexOf('Keywords')
-
+      
       for (let index = 0; index < sheet[0].data.length; index++) {
         const element = sheet[0].data[index];
         
