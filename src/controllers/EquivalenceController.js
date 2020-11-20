@@ -3,7 +3,7 @@ const Equivalence = require('../models/Equivalence')
 const TableUtils = require('../tools/TableUtils')
 const xlsx = require('node-xlsx').default;
 const fs = require('fs');
-const papa = require('papaparse');
+
 
 module.exports = {
 

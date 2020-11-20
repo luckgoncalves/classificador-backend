@@ -1,4 +1,5 @@
 const express = require('express');
+
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
 
@@ -19,5 +20,6 @@ routes.delete('/equivalence/:equivalence_id', EquivalenceController.delete)
 //Compare
 routes.post('/compare_equivalence/:style_id', upload.single('tabela'), EquivalenceController.compare)
 routes.post('/import_equivalence/:style_id', upload.single('tabela'), EquivalenceController.import)
+
 
 module.exports = routes;

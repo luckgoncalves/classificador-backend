@@ -1,2 +1,7 @@
 node_modules
+<<<<<<< HEAD
 yarn.lock
+=======
+yarn.lock
+.package.json.swp
+>>>>>>> 3e697259c12bbe8cdf81f784d2498075d2b57b89
