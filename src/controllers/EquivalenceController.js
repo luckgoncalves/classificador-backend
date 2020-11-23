@@ -50,7 +50,7 @@ module.exports = {
       
       const sheet = xlsx.parse(fs.readFileSync(req.file.path));
       const columns = TableUtils.registerTable(sheet[0].data);
-      
+
       let TableHeader = columns
           TableHeader.push('PRE_EQUIVALENCIA')
       
@@ -70,15 +70,18 @@ module.exports = {
           result.total++
           
           let ob = equivalence.filter( eq => wordImport[eventKey] ? wordImport[eventKey].indexOf(eq.word) !== -1 : '')
-
-          TableRow.push({evento: wordImport[eventKey], equivalencia: ob.length > 0 ? ob[0].word_key : '(não classificado)'})
-          ob ? result.success++ : result.error++
-
+          
+          wordImport.push(ob.length > 0 ? ob[0].word_key : '(não classificado)')
+          
+          TableRow.push(wordImport)
+          
+          ob.length > 0  ? result.success++ : result.error++
         }
       }
-      let Table = [TableRow, TableRow]
 
-      return res.json({TableRow, result})
+      let Table = {tableHeader: TableHeader, tableRow: TableRow}
+
+      return res.json({Table, result})
     }
   },
   

@@ -12,7 +12,8 @@ module.exports = {
     return res.json(models)
   },
   async create(req, res) {
-    const models = await Models.create(req.body);
+    await Models.create(req.body);
+    const models = await Models.find();
     return res.json(models)
   },
   async update(req, res) {

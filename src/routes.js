@@ -7,10 +7,11 @@ const StyleController = require('./controllers/StyleController')
 const EquivalenceController = require('./controllers/EquivalenceController')
 const routes = express.Router()
 
-// Models
+// Patterns
 routes.get('/styles', StyleController.findAll);
 routes.post('/createStyle', StyleController.store);
 routes.put('/updateStyle/:id', StyleController.update);
+routes.delete('/deletePattern/:id', StyleController.delete);
 
 //Equivalence
 routes.post('/styles/:style_id/equivalence', EquivalenceController.store);
